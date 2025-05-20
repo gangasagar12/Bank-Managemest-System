@@ -24,6 +24,8 @@ void transfer_money(); // function to transfer money
 int main()
 {
     int choice;   // variable to store user choice
+    while(1){   // infinnite loop to keep the program running 
+        system("cls"); // clear the screen
     printf("Welcome to the Bank Management System\n");
     printf("1. Create Account\n"); 
     printf("2. Deposit Money\n");
@@ -35,11 +37,52 @@ int main()
     printf("enter your choice:");
     scanf("%d", &choice); // take user input for choice
 
-    while(1)  // infinite loop to keep the program running 
-    {
-        switch(choice)
-        
-        {
-       
+    
+        switch(choice){
+            case 1:
+            create_account();
+        break;
+        case 2:
+        deposit_money();
+        break;
+        case 3:
+        withdraw_money();
+        break;
+        case 4:
+        check_balance();
+        break;
+        case 5:
+        view_all_accounts();
+        break;
+        case 6:
+        transfer_money();
+        break;
+        case 7:
+        exit(0);
+        break;
+        default:
+        printf("Invalid choice\n");
+        }
+    } 
+    return 0;
 }
+        
+void create_account(){
+    if(account_count>=100){               // check if maximum member is reached
+        printf(" maximum number of account is reached: \n");
+        return;
     }
+    printf("enter the account holder  name: \n");                         // for the account holder namw
+    scanf("%s",&accounts[account_count].name); 
+
+    printf(" enter the account holder name : \n");  // for the account  member
+    gets(accounts[account_count].account_number);
+
+    printf("enter the password: \n");
+    gets(accounts[account_count].password);
+
+    printf("enter the initial balance: \n");
+    scanf("%f",&accounts[account_count].balance);
+    account_count++;                           // increament the account count
+    printf("account created successfully\n");
+}
