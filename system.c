@@ -46,10 +46,10 @@ int main()
         deposit_money();
         break;
         case 3:
-        withdraw_money();
+        withdraw_money();  // functiom  money withdraw
         break;
         case 4:
-        check_balance();
+        check_balance();  // function to check balance
         break;
         case 5:
         view_all_accounts();
@@ -60,8 +60,8 @@ int main()
         case 7:
         exit(0);
         break;
-        default:
-        printf("Invalid choice\n");
+        default:    // default case
+        printf("Invalid choice  ! plese enter the valid choiece: \n");
         }
     } 
     return 0;
