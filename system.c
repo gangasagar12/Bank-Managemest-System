@@ -35,8 +35,52 @@ int main()
     printf("6. transfer money: \n");
     printf("7. Exit\n");
     printf("enter your choice:");
-    scanf("%d", &choice); // take user input for choice
-
-    }
+    scanf("%d", &choice); 
+    switch(choice){
+        case 1:
+        create_account();
+        break;
+        case 2:
+        deposit_money();
+        break;
+        case 3:
+        withdraw_money();  // functiom  money withdraw
+        break;
+        case 4:
+        check_balance();  // function to check balance
+        break;
+        case 5:
+        view_all_accounts();
+        break;
+        case 6:
+        transfer_money();
+        break;
+        case 7:
+        exit(0);
+        break;
+        default:    // default case
+        printf("Invalid choice  ! plese enter the valid choiece: \n");
+        }
     return 0;
+}
+}
+
+void create_account(){
+    if(account_count>=100){               // check if maximum member is reached
+        printf(" maximum number of account is reached: \n");
+        return;
+    }
+    printf("enter the account holder  name: \n"); // for the account holder namw
+    scanf("%s",&accounts[account_count].name); 
+
+    printf(" enter the account holder name : \n");  // for the account  member
+    gets(accounts[account_count].account_number);
+
+    printf("enter the password: \n");
+    gets(accounts[account_count].password);
+
+    printf("enter the initial balance: \n");
+    scanf("%f",&accounts[account_count].balance);
+    account_count++;                           // increament the account count
+    printf("account created successfully\n");
 }
