@@ -84,3 +84,55 @@ void create_account(){
     account_count++;                           // increament the account count
     printf("account created successfully\n");
 }
+void deposit_money(){
+    if (account_count==0){
+        printf("no account is created\n");
+        return;
+    }
+    int account_number;
+    float amount;
+    printf("enter the account number: \n");
+    scanf("%d",&account_number);
+    for (int i = 0; i < account_count; i++)
+    {
+    if(account_number==accounts[i].account_number){
+        printf("enter the amount to deposit: \n");
+        scanf("%2f",&amount);
+        accounts[i].balance+=amount;
+        printf("amount deposit sucessfully: \n");
+        return;
+    }
+    printf("account not found\n");
+
+    
+}
+
+}
+void withdraw_money(){
+    if (account_count==0){
+        printf("no account is created\n");
+        return;
+    }
+    int account_number;
+    float amount;
+    printf("enter the account number: \n");
+    scanf("%d",&account_number);
+    for (int i = 0; i < account_count; i++)
+    {
+    if(account_number==accounts[i].account_number){
+        printf("enter the amount to withdraw: \n");
+        scanf("%2f",&amount);
+        if(amount>accounts[i].balance){
+            printf("insufficient balance\n");
+            return;
+        }
+        accounts[i].balance-=amount;
+        printf("amount withdraw sucessfully: \n");
+        return;
+    }
+    printf("account not found\n");
+
+    
+}
+
+}
