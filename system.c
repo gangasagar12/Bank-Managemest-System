@@ -18,7 +18,7 @@ void withdraw_money(); // function to withdraw money
 
 void check_balance(); // function to check balance
 void view_all_accounts(); // function to view all accounts
-// void transfer_money(); // function to transfer money
+void transfer_money(); // function to transfer money
 
 
 int main()
@@ -62,10 +62,10 @@ int main()
         case 5:
         view_all_accounts();
         break;
-        // case 6:
-        // transfer_money();
-        // break;
-        // case 7:
+        case 6:
+        transfer_money();
+        break;
+        case 7:
         exit(0);
         break;
         default:    // default case
@@ -163,4 +163,20 @@ void view_all_accounts(){
         printf("balance is %2f  is : \n",account[i].balance);
     }
 
+}
+void transfer_money(){
+    system("cls");
+    int acc_no;
+    printf("enter the account number: \n");
+    scanf("%d",&acc_no);
+    if (account_count<0){
+        printf("no account availabe at this system ! plese create the account at firsrt: ");
+        return 0;
+    }
+    int dest_no;
+    // take the transefer acccount number
+    printf("enter the transefer account numbeer: ");
+    scanf("%d",&dest_no);
+    dest_no==account[i].count
+    printf(" the money transfer source account to dest account ",dest_no);
 }
